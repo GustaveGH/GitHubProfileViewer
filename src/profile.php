@@ -18,11 +18,19 @@
         <div class="info">
             <div>
                 <h2>Username : <?= $user["login"] ?></h2>
-                <h2>Bio : <?= $user["bio"] ?></h2>
+                <h2>Bio : <?php if($user["bio"] == ""){
+                    echo "None";
+                }else{
+                    echo $user["bio"];
+                } ?></h2>
             </div>
             <div>
                 <h2>Repositórios : <?= $user["public_repos"] ?></h2>
-                <h2>País : <?= $user["location"] ?></h2>
+                <h2>País : <?php if($user["location"] == ""){
+                    echo "None";
+                }else{
+                    echo $user["location"];
+                } ?></h2>
             </div>
         </div>
     </div>
